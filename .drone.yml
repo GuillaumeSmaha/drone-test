@@ -4,6 +4,7 @@ pipeline:
     image: golang:latest
     pull: true
     commands:
-    - GOPATH=`pwd`/.env go build
+    - GOPATH=`pwd`/.env go build -o test
+    - ./test
     when:
       event: [push, tag]
