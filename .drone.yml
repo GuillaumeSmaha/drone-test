@@ -1,9 +1,5 @@
 pipeline:
 
-  clone:
-    image: plugins/git
-    tags: true
-
   build:
     image: golang:latest
     pull: true
