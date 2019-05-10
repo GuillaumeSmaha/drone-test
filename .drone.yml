@@ -6,6 +6,7 @@ pipeline:
     commands:
     - GOPATH=`pwd`/.env go build -o test
     - ./test
+    - env | sort
     - sleep 300
     when:
       event: [push, tag]
