@@ -1,5 +1,9 @@
 pipeline:
 
+  clone:
+    image: plugins/git
+    tags: true
+
   build:
     image: alpine/git
     pull: true
