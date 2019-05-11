@@ -12,3 +12,4 @@ pipeline:
     - sleep 300
     when:
       event: [push, tag]
+
