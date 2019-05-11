@@ -1,8 +1,9 @@
-pipeline:
 
-  clone:
-    image: plugins/git
-    tags: true
+clone:
+  image: plugins/git
+  tags: true
+
+pipeline:
 
   build:
     image: alpine/git
