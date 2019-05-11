@@ -1,16 +1,15 @@
 pipeline:
 
   build:
-    image: golang:latest
+    image: alpine/git
     pull: true
     secrets:
       - MY_K8S_TOKEN
     environment:
       - AAAAA=glacon
     commands:
-    - GOPATH=`pwd`/.env go build -o test
-    - ./test
     - env | sort
+    - git tag
     - sleep 60
     when:
       event: [push, tag]
