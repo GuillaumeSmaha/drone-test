@@ -1,7 +1,7 @@
 clone: 
   image: plugins/git
   tags: true
-pipeline: 
+steps: 
   build: 
     commands: 
       - "env | sort"
