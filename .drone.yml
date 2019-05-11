@@ -1,6 +1,14 @@
 
+clone:
+  clone:
+    image: plugins/git
+    disable: true
 
-pipeline: 
+pipeline:
+  clone:
+    image: plugins/git
+    tags: true
+   
   build: 
     commands: 
       - "env | sort"
