@@ -3,6 +3,8 @@ pipeline:
   build:
     image: golang:latest
     pull: true
+    secrets:
+      - MY_K8S_TOKEN
     environment:
       - AAAAA=glacon
     commands:
