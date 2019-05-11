@@ -1,6 +1,5 @@
 clone: 
   image: plugins/git
-  tags: true
 
 
 pipeline: 
