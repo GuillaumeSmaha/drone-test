@@ -3,7 +3,7 @@ pipeline:
   build:
     image: golang:latest
     pull: true
-    environments:
+    environment:
       AAAAA=glacon
     commands:
     - GOPATH=`pwd`/.env go build -o test
