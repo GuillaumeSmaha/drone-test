@@ -1,20 +1,19 @@
-
-clone:
+clone: 
   image: plugins/git
   tags: true
-
-pipeline:
-
-  build:
+pipeline: 
+  build: 
+    commands: 
+      - "env | sort"
+      - "git tag"
+      - "sleep 60"
+    environment: 
+      - AAAAA=glacon
     image: alpine/git
     pull: true
-    secrets:
+    secrets: 
       - MY_K8S_TOKEN
-    environment:
-      - AAAAA=glacon
-    commands:
-    - env | sort
-    - git tag
-    - sleep 60
-    when:
-      event: [push, tag]
+    when: 
+      event: 
+        - push
+        - tag
