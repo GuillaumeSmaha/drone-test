@@ -1,5 +1,4 @@
-clone: 
-  depth: 50
+
 
 pipeline: 
   build: 
