@@ -1,4 +1,7 @@
-
+clone:
+  git:
+    image: plugins/git
+    tags: true
 
 pipeline: 
   build: 
