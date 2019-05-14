@@ -5,9 +5,6 @@ clone:
     disable: true
 
 pipeline:
-  clone:
-    image: plugins/git
-    tags: true
    
   build: 
     commands: 
@@ -28,7 +25,7 @@ pipeline:
         - push
         - tag
 
-  build2: 
+  "Build my case": 
     commands: 
       - "env | sort"
       - "git tag"
