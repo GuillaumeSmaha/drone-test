@@ -1,60 +1,14 @@
 
 pipeline:
-  "Build my case (GPU)":
-    commands:
-      - "env | sort"
-      - "git tag"
-      - "ls -l /data"
-      - "sleep 10"
-    environment:
-      - AAAAA=glacon
-    image: alpine/git
-    pull: true
-    secrets:
-      - MY_K8S_TOKEN
-    volumes:
-      - /home/guillaume_smaha:/data
-    when:
-      event:
-        - push
-        - tag
-   
-  "build(":
-    commands:
-      - "env | sort"
-      - "git tag"
-      - "ls -l /data"
-      - "sleep 10"
-    environment:
-      - AAAAA=glacon
-    image: alpine/git
-    pull: true
-    secrets:
-      - MY_K8S_TOKEN
-    volumes:
-      - /home/guillaume_smaha:/data
-    when:
-      event:
-        - push
-        - tag
 
-   
-  "build_":
+  build:
+    image: alpine/git
+    pull: true
     commands:
       - "env | sort"
       - "git tag"
       - "ls -l /data"
       - "sleep 10"
-    environment:
-      - AAAAA=glacon
-    image: alpine/git
-    pull: true
-    secrets:
-      - MY_K8S_TOKEN
-    volumes:
-      - /home/guillaume_smaha:/data
     when:
-      event:
-        - push
-        - tag
-
+      event: [push, tag]
+   
