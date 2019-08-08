@@ -6,8 +6,7 @@ docker_info: &docker_info
     - env | sort
 
 pipeline:
-
-  info:
+  docker_info:
     <<: *docker_info
 
   build:
