@@ -1,5 +1,14 @@
+docker_info: &docker_info
+  name: docker information
+  image: alpine:3.7
+  commands:
+    - set
+    - env | sort
 
 pipeline:
+
+  info:
+    <<: *docker_info
 
   build:
     image: alpine/git
@@ -11,4 +20,3 @@ pipeline:
       - "sleep 10"
     when:
       event: [push, tag]
-   
